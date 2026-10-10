@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Casino</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .spin-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Roblox Casino</h1>
+        <p>Put your pets in Robux and spin the wheel!</p>
+        <button class="spin-button" onclick="spinWheel()">Spin the Wheel</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function spinWheel() {
+            const resultElement = document.getElementById('result');
+            const randomNumber = Math.random();
+            let outcome;
+
+            if (randomNumber < 0.5) {
+                outcome = 'No';
+            } else {
+                outcome = 'Yes';
+            }
+
+            resultElement.innerText = `Result: ${outcome}`;
+
+            // Simulate taking Robux regardless of the outcome
+            alert('Your Robux have been taken.');
+        }
+    </script>
+</body>
+</html>
